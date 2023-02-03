@@ -1,15 +1,23 @@
-
+function blurCheck() {
+    if (document.getElementById('frame1').style.display === 'block' && document.getElementById('frame2').style.display === 'block' && document.getElementById('frame3').style.display === 'block') {
+        document.getElementsByTagName('body').style.backdropFilter = '6px';    
+    }
+    else{
+        document.getElementsByTagName('body').style.backdropFilter = '0px';
+    }
+}
 function displayFrame(value, caller) {
     document.getElementById(value).style.display = 'block';
     console.log("Clicked btn_1");
     document.getElementById(caller).style.backdropFilter = "blur(3px)";
     document.getElementById(caller).style.borderColor = "gray";
+    blurCheck();
 }
 function hideFrame(value, caller) {
     let frame = document.getElementById(value);
     frame.style.display = 'none';
     document.getElementById(caller).style.backdropFilter = "blur(0px)";
-    blurCheck();
+    
 }
 
 function resizeFrame(value) {
@@ -57,11 +65,3 @@ document.getElementById("frame3_Resize").addEventListener("click",
 
 
 
-function blurCheck() {
-    if (document.getElementById('frame1').style.display === 'block'&&document.getElementById('frame2').style.display === 'block'&&document.getElementById('frame3').style.display === 'block') {
-        document.getElementsByTagName('body').style.backdropFilter = '6px';    
-    }
-    else{
-        document.getElementsByTagName('body').style.backdropFilter = '0px';
-    }
-}
