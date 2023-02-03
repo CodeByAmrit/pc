@@ -11,7 +11,7 @@ body {
     background-color: rgba(0, 0, 0, 0.575);
     background-repeat: no-repeat;
     background-size: cover;
-    backdrop-filter: blur(2px);
+    /* backdrop-filter: blur(0px); */
     display: flex;
     justify-content: center;
     overflow: hidden;

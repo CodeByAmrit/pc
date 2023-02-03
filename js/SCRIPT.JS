@@ -9,7 +9,7 @@ function hideFrame(value, caller) {
     let frame = document.getElementById(value);
     frame.style.display = 'none';
     document.getElementById(caller).style.backdropFilter = "blur(0px)";
-
+    blurCheck();
 }
 
 function resizeFrame(value) {
@@ -54,3 +54,14 @@ document.getElementById("frame3_Close").addEventListener("click",
 // ------------------------   Button 1 Resize  -----------------------------
 document.getElementById("frame3_Resize").addEventListener("click",
     () => { resizeFrame('frame3', 'btn-3') });
+
+
+
+function blurCheck() {
+    if (document.getElementById('frame1').style.display === 'block'&&document.getElementById('frame2').style.display === 'block'&&document.getElementById('frame3').style.display === 'block') {
+        document.getElementsByTagName('body').style.backdropFilter = '6px';    
+    }
+    else{
+        document.getElementsByTagName('body').style.backdropFilter = '0px';
+    }
+}
